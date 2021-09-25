@@ -1,7 +1,7 @@
-import 'package:authentification/HomePage.dart';
-import 'package:authentification/Login.dart';
-import 'package:authentification/SignUp.dart';
-import 'package:authentification/Start.dart';
+import 'package:moryim/HomePage.dart';
+import 'package:moryim/Login.dart';
+import 'package:moryim/SignUp.dart';
+import 'package:moryim/Start.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 

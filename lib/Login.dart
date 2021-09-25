@@ -1,4 +1,4 @@
-import 'package:authentification/HomePage.dart';
+import 'package:moryim/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
