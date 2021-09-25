@@ -16,9 +16,8 @@ class _SignUpState extends State<SignUp> {
   checkAuthentication() async {
     _auth.authStateChanges().listen((user) async {
       if (user != null) {
-        Navigator.push(context, MaterialPageRoute(
-          
-        builder: (context) =>Login()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Login()));
       }
     });
   }
@@ -37,10 +36,7 @@ class _SignUpState extends State<SignUp> {
         UserCredential user = await _auth.createUserWithEmailAndPassword(
             email: _email, password: _password);
         if (user != null) {
-      
           await _auth.currentUser.updateProfile(displayName: _name);
-        
-
         }
       } catch (e) {
         showError(e.message);
@@ -57,7 +53,7 @@ class _SignUpState extends State<SignUp> {
             title: Text('ERROR'),
             content: Text(errormessage),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -69,6 +65,8 @@ class _SignUpState extends State<SignUp> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
@@ -88,6 +86,7 @@ class _SignUpState extends State<SignUp> {
                   children: <Widget>[
                     Container(
                       child: TextFormField(
+                          // ignore: missing_return
                           validator: (input) {
                             if (input.isEmpty) return 'Enter Name';
                           },
@@ -99,6 +98,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     Container(
                       child: TextFormField(
+                          // ignore: missing_return
                           validator: (input) {
                             if (input.isEmpty) return 'Enter Email Address';
                           },
@@ -109,6 +109,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     Container(
                       child: TextFormField(
+                          // ignore: missing_return
                           validator: (input) {
                             if (input.length < 6)
                               return 'Provide Minimum 6 Character';
@@ -121,17 +122,11 @@ class _SignUpState extends State<SignUp> {
                           onSaved: (input) => _password = input),
                     ),
                     SizedBox(height: 20),
-                    RaisedButton(
-                      padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
+                    ElevatedButton(
+                      style: style,
                       onPressed: signUp,
-                      child: Text('SignUp',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold)),
-                      color: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                      child: Text(
+                        'SignUp',
                       ),
                     )
                   ],

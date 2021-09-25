@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
             title: Text('ERROR'),
             content: Text(errormessage),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -70,6 +70,8 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Scaffold(
         body: SingleChildScrollView(
       child: Container(
@@ -89,8 +91,10 @@ class _LoginState extends State<Login> {
                   children: <Widget>[
                     Container(
                       child: TextFormField(
+                          // ignore: missing_return
                           validator: (input) {
-                            if (input.isEmpty) return 'Enter Email Address';
+                            if (input.isEmpty) 
+                            return 'Enter Email Address';
                           },
                           decoration: InputDecoration(
                               labelText: 'Email Address',
@@ -99,10 +103,12 @@ class _LoginState extends State<Login> {
                     ),
                     Container(
                       child: TextFormField(
+                          // ignore: missing_return
                           validator: (input) {
                             if (input.length < 6)
                               return 'Provide Minimum 6 Character';
                           },
+
                           decoration: InputDecoration(
                             labelText: 'Password',
                             prefixIcon: Icon(Icons.lock),
@@ -111,17 +117,11 @@ class _LoginState extends State<Login> {
                           onSaved: (input) => _password = input),
                     ),
                     SizedBox(height: 20),
-                    RaisedButton(
-                      padding: EdgeInsets.fromLTRB(60, 10, 60, 10),
+                    ElevatedButton(
+                      style: style,
                       onPressed: login,
                       child: Text('LOGIN',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold)),
-                      color: Colors.blue,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
+                          
                       ),
                     )
                   ],

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-
 class MyAppointmentScreen4 extends StatefulWidget {
-   const MyAppointmentScreen4({Key key}) : super(key: key);
-
+  const MyAppointmentScreen4({Key key}) : super(key: key);
 
   @override
   _MyAppointmentScreen4 createState() => _MyAppointmentScreen4();
@@ -53,6 +51,8 @@ class _MyAppointmentScreen4 extends State<MyAppointmentScreen4> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Scaffold(
         body: Container(
       child: !isloggedin
@@ -60,24 +60,18 @@ class _MyAppointmentScreen4 extends State<MyAppointmentScreen4> {
           : Column(
               children: <Widget>[
                 Container(
-              height: 400,
-              child: Image(
-                image: AssetImage("assets/images/login.jpg"),
-                fit: BoxFit.contain,
-              ),
-            ),
+                  height: 400,
+                  child: Image(
+                    image: AssetImage("assets/images/login.jpg"),
+                    fit: BoxFit.contain,
+                  ),
+                ),
                 SizedBox(height: 40.0),
-                RaisedButton(
-                  padding: EdgeInsets.fromLTRB(70, 10, 70, 10),
+                ElevatedButton(
+                  style: style,
                   onPressed: signOut,
-                  child: Text('Signout',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold)),
-                  color: Colors.blue,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
+                  child: Text(
+                    'Signout',
                   ),
                 )
               ],
@@ -85,4 +79,3 @@ class _MyAppointmentScreen4 extends State<MyAppointmentScreen4> {
     ));
   }
 }
-

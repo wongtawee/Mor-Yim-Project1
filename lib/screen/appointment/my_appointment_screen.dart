@@ -3,20 +3,16 @@ import 'package:flutter/material.dart';
 class MyAppointmentScreen extends StatelessWidget {
   const MyAppointmentScreen({Key key}) : super(key: key);
 
-
-
-    @override
+  @override
   Widget build(BuildContext context) {
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
         children: [
           Expanded(
-            /*1*/
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                /*2*/
                 Container(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: const Text(
@@ -35,7 +31,6 @@ class MyAppointmentScreen extends StatelessWidget {
               ],
             ),
           ),
-          /*3*/
         ],
       ),
     );
@@ -52,11 +47,10 @@ class MyAppointmentScreen extends StatelessWidget {
     );
 
     Widget textSection = const Padding(
-      padding: EdgeInsets.all(32),
+      padding: EdgeInsets.all(40),
       child: Text(
         'Address :'
-        '   89 / 8-9 Moo 2 Chaofa Rd, Wichit Subdistrict, Mueang Phuket District, Phuket 83000 '
-      ,
+        '   89 / 8-9 Moo 2 Chaofa Rd, Wichit Subdistrict, Mueang Phuket District, Phuket 83000 ',
         softWrap: true,
       ),
     );

@@ -43,6 +43,8 @@ class _StartState extends State<Start> {
 
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style =
+        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     return Scaffold(
       body: Container(
         child: Column(
@@ -74,42 +76,23 @@ class _StartState extends State<Start> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
-                    padding: EdgeInsets.only(left: 30, right: 30),
+                ElevatedButton(
+                    style: style,
                     onPressed: navigateToLogin,
                     child: Text(
                       'LOGIN',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    color: Colors.blue),
-                SizedBox(width: 20.0),
-                RaisedButton(
-                    padding: EdgeInsets.only(left: 30, right: 30),
-                    onPressed: navigateToRegister,
-                    child: Text(
-                      'REGISTER',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    color: Colors.blue),
+                    )),
+                SizedBox(width: 60.0),
+                ElevatedButton(
+                  style: style,
+                  onPressed: navigateToRegister,
+                  child: Text(
+                    'REGISTER',
+                  ),
+                )
               ],
             ),
-            GestureDetector(
-              child: Text('ลืมรหัสผ่าน')
-            )
+            GestureDetector(child: Text('ลืมรหัสผ่าน'))
           ],
         ),
       ),
