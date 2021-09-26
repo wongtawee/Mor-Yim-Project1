@@ -63,7 +63,7 @@ class MyAppointmentScreen extends StatelessWidget {
         body: ListView(
           children: [
             Image.asset(
-              'assets/images/lake.jpg',
+              'assets/images/hospital.jpg',
               width: 600,
               height: 240,
               fit: BoxFit.cover,
